@@ -188,12 +188,12 @@
         <div class="pagination">
           <ul>
           {% for num in allcars.paginator.page_range %}
-          {% ifequal num allcars.number %}
+          {% if num == allcars.number %}
           
           <li class="current">{{ num }}</li>
           {% else %}
           <li><a href="?page={{ num }}">{{ num }}</a></li>
-          {% endifequal %} 
+          {% endif %} 
           {% endfor %}
 
           </ul>

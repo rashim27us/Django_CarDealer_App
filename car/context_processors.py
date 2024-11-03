@@ -5,5 +5,5 @@ from .models import Car, Privacy, Ads
 def ad_processor(request):
     popup_ad = Ads.objects.all()
     return {
-        'ad' : popup_ad[0]
+        'ad' : popup_ad.first()
     }

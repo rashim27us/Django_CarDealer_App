@@ -17,7 +17,7 @@ from django.http import HttpResponseRedirect
 from django.core.management import call_command
 
 # installed rate limit
-from django_ratelimit.decorators import ratelimit
+# from django_ratelimit.decorators import ratelimit
 
 import random
 
@@ -255,7 +255,7 @@ def about_us(request):
 
 
 #Signup page
-@ratelimit(key='ip', rate='10/h', block=True)
+# @ratelimit(key='ip', rate='10/h', block=True)
 def signup(request):
     if request.method == 'POST':
         #get the form parameters
@@ -326,7 +326,7 @@ def signup(request):
 
 
 #User Login Modal
-@ratelimit(key='ip', rate='10/h', block=True)  
+# @ratelimit(key='ip', rate='10/h', block=True)  
 def login_model(request):
     if request.method == 'POST':
         #get the form parameters
@@ -367,7 +367,7 @@ def privacy(request):
 
 
 # Submit phone number to access details
-@ratelimit(key='ip', rate='10/h', block=True)
+# @ratelimit(key='ip', rate='10/h', block=True)
 def submit_number(request):
     global message
     global ph_number
